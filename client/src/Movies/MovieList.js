@@ -23,11 +23,12 @@ export default class MovieList extends Component {
   }
 
   render() {
+    const { addToSavedList } = this.props;
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
           <Link key={movie.id} to={`/movies/${movie.id}`}>
-            <MovieCard movie={movie} />
+            <MovieCard movie={movie} addToSavedList={addToSavedList} />
           </Link>
         ))}
       </div>

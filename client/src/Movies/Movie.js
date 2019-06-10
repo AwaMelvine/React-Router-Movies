@@ -38,11 +38,13 @@ export default class Movie extends Component {
   // }
 
   render() {
+    const { addToSavedList } = this.props;
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
 
-    const { title, director, metascore, stars } = this.state.movie;
-    return <MovieCard movie={this.state.movie} />;
+    return (
+      <MovieCard movie={this.state.movie} addToSavedList={addToSavedList} />
+    );
   }
 }
